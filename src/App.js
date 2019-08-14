@@ -5,6 +5,7 @@ import AddedFeatures from './components/AddedFeatures';
 import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
 
+
 const App = () => {
   const state = {
     additionalPrice: 0,
@@ -25,10 +26,12 @@ const App = () => {
 
   const removeFeature = item => {
     // dispatch an action here to remove an item
+    dispatch({type:'removeItem'})
   };
 
   const buyItem = item => {
     // dipsatch an action here to add an item
+    dispatch({type:'addItem'})
   };
 
   return (
@@ -45,4 +48,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default connect(mapStateToProps,{})(App);
